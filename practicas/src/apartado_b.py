@@ -20,7 +20,7 @@ def imprimir_aceites_denominacion_precio(cursor):
     sc.pack(side=RIGHT, fill=Y)
     lb = Listbox(v, width=150, yscrollcommand = sc.set)
     for row in cursor:
-        lb.insert(END, "Denominación: " +row[1])
+        lb.insert(END, "Denominacion: " +row[1])
         lb.insert(END, "Precio: " + row[2])
         lb.insert(END, "")
         
@@ -34,7 +34,7 @@ def imprimir_aceites_denominacion(cursor):
     sc.pack(side=RIGHT, fill=Y)
     lb = Listbox(v, width=150, yscrollcommand = sc.set)
     for row in cursor:
-        lb.insert(END, "Denominación: " +row[1])
+        lb.insert(END, "Denominacion: " +row[1])
         lb.insert(END, "")
         
         lb.pack(side = LEFT, fill = BOTH)
