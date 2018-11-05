@@ -1,12 +1,23 @@
 -- VERSION_5
 -- START DISKCACHE_2
 C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\.metadata\.plugins\org.eclipse.core.resources\.projects\practicas\com.python.pydev.analysis\v2_indexcache
+src.__init__|1541350463966755000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\__init__.py
+src.practicaBSG2|1541414196089422000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+2
+1=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
+2=src.practicaBSG2
 -- END DICTIONARY
 -- START TREE 1
-0
+7
+car|1|cargar!1^28#5*18@
+cer|1|cerrar_conexion!1^24#5*18@
+cre|1|crear_conexion!1^18#5*18@
+def|1|definir_pagina2!1^99#5*18@
+for|1|formatear_numero!1^87#5*18@
+pro|1|procesar_pagina!1^111#5*18@
+ven|1|ventana_principal!1^118#5*18@
 -- END TREE
 -- START TREE 2
 0
