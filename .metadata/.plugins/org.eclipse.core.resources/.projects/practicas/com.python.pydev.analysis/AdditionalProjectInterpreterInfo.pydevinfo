@@ -1,12 +1,28 @@
 -- VERSION_5
 -- START DISKCACHE_2
 C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\.metadata\.plugins\org.eclipse.core.resources\.projects\practicas\com.python.pydev.analysis\v2_indexcache
+src.__init__|1541350463966755000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\__init__.py
+src.practicaBSG2|1541425449655440000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+2
+1=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
+2=src.practicaBSG2
 -- END DICTIONARY
 -- START TREE 1
-0
+12
+bus|1|buscar_opiniones!1^155#5*18@
+car|1|cargar!1^28#5*18@
+cer|1|cerrar_conexion!1^24#5*18@
+cre|1|crear_conexion!1^18#5*18@
+def|1|definir_pagina2!1^111#5*18@
+for|1|formatear_numero!1^99#5*18@
+imp|2|imprimir_aceites_denominacion!1^199#5*18@imprimir_aceites_denominacion_precio!1^139#5*18@
+mos|1|mostrar_packs!1^163#5*18@
+ord|1|ordenar_precio!1^130#5*18@
+pac|1|packs_db!1^187#5*18@
+pro|1|procesar_pagina!1^123#5*18@
+ven|1|ventana_principal!1^214#5*18@
 -- END TREE
 -- START TREE 2
 0

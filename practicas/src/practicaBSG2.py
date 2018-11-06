@@ -3,7 +3,11 @@ Created on 5 nov. 2018
 
 @author: Alvaro Calle Glez
 '''
+<<<<<<< HEAD
 # encoding:utf-8
+=======
+
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
 import urllib.request
 
 import sqlite3 as dbapi
@@ -47,6 +51,10 @@ def cargar():
         
         for producto in productos:
             tag_producto = producto.find("div", class_ = ["product-shop"])
+<<<<<<< HEAD
+=======
+            tag_pack = producto.find("div", class_ = ["amlabel-div", "test2"])
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
             
             tag_h2 = tag_producto.find("h2", class_ = ["product-name"])
             tag_box_price = tag_producto.find("div", class_ = ["price-box"])
@@ -54,21 +62,42 @@ def cargar():
             tag_deno = tag_h2.find("a")
             tag_enlace = producto.find("a")
             tag_reg_precio = tag_box_price.find("span", class_ = ["regular-price"])
+<<<<<<< HEAD
             
+=======
+            tag_rating = tag_producto.find("div", class_ = ["ratings"])
+            
+            denominacion = tag_deno.string.strip()
+            enlace = tag_enlace['href']
+            
+            formato = ""
+            precio = "144,99"
+            opiniones = 0
+            
+            if tag_pack != None:
+                tag_formato = tag_pack.find("span", class_ = ["amlabel-txt"])
+                if tag_formato != None and len(tag_formato.contents) == 3:
+                    formato = tag_formato.contents[2]
+                    
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
             if tag_reg_precio != None:
                 tag_precio = tag_reg_precio.find("span", class_ = ["price"])
                 if tag_precio != None:
                     precio = re.compile("^\d+(,\d+)?").search(tag_precio.string.strip()).group(0)
+<<<<<<< HEAD
             else:
                 precio = 144.99
             
             tag_rating = tag_producto.find("div", class_ = ["ratings"])
+=======
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
             
             if tag_rating != None:
                 tag_span = tag_rating.find("span", class_ = ["amount"])
                 tag_a = tag_span.find("a")
                 opiniones = int(re.compile("^\d+(,\d+)?").search(tag_a.string.strip()).group(0))
             
+<<<<<<< HEAD
             else:
                 opiniones = 0
             
@@ -77,10 +106,14 @@ def cargar():
             precio = re.compile("^\d+(,\d+)?").search(tag_precio.string.strip()).group(0)
             formato = "Form"
             
+=======
+                        
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
             conn.execute("""INSERT INTO PRODUCTOS (DENOMINACION, ENLACE, PRECIO, OPINIONES, FORMATO_PACK)
                  VALUES (?, ?, ?, ?, ?)""", (denominacion,
                                                 enlace,
                                                 formatear_numero(precio),
+<<<<<<< HEAD
                                                 formato,
                                                 opiniones))
             
@@ -92,6 +125,20 @@ def cargar():
     
     cerrar_conexion(conn)
 
+=======
+                                                opiniones,
+                                                formato))
+            
+    conn.commit()
+        
+    cursor = conn.execute("SELECT COUNT(*) FROM PRODUCTOS")
+    messagebox.showinfo("Base de datos", "Base de datos creada correctamente.\nHay " +
+                     str(cursor.fetchone()[0]) + " registros.")
+    
+    cerrar_conexion(conn)
+
+
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
 def formatear_numero(precio):
     cadena_precio = ""
     
@@ -124,6 +171,7 @@ def procesar_pagina(d:str):
 
 
 def ordenar_precio():
+<<<<<<< HEAD
     conn = crear_conexion() 
     cursor = conn.execute("SELECT DENOMINACION,PRECIO FROM PRODUCTOS ORDER BY PRECIO ASC")
     imprimir_aceites_denominacion_precio(cursor)
@@ -137,6 +185,39 @@ def buscar_opiniones():
         cursor=conn.execute("""SELECT * FROM PRODUCTOS WHERE OPINIONES > 0 """)
         imprimir_aceites_denominacion(cursor)
         cerrar_conexion(conn)
+=======
+    conn = crear_conexion()
+     
+    cursor = conn.execute("SELECT DENOMINACION,PRECIO FROM PRODUCTOS ORDER BY PRECIO")
+    imprimir_aceites_denominacion_precio(cursor)
+    
+    cerrar_conexion(conn)
+
+
+def imprimir_aceites_denominacion_precio(cursor):
+    v = Toplevel()
+    
+    sc = Scrollbar(v)
+    sc.pack(side = RIGHT, fill = Y)
+    
+    lb = Listbox(v, width=150, yscrollcommand = sc.set)
+    for row in cursor:
+        lb.insert(END, "Denominacion: " + row[0])
+        lb.insert(END, "Precio: " + str(row[1]))
+        lb.insert(END, "")
+        
+        lb.pack(side = LEFT, fill = BOTH)
+        sc.config(command = lb.yview)    
+
+def buscar_opiniones():
+    
+    conn = crear_conexion() 
+        
+    cursor=conn.execute("SELECT DENOMINACION FROM PRODUCTOS WHERE OPINIONES > 0")
+    imprimir_aceites_denominacion(cursor)
+    
+    cerrar_conexion(conn)
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
         
 def mostrar_packs():
     def filtrar_busqueda(event):
@@ -144,28 +225,45 @@ def mostrar_packs():
         
         s_pack = "%" + en_pack.get() + "%"
         
+<<<<<<< HEAD
         cursor = conn.execute("SELECT * FROM PRODUCTOS WHERE FORMATO_PACK LIKE ?",(s_pack))
         
+=======
+        cursor = conn.execute("SELECT DENOMINACION,PRECIO FROM PRODUCTOS WHERE FORMATO_PACK LIKE ?", (s_pack,))
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
         imprimir_aceites_denominacion_precio(cursor)
         
         cerrar_conexion(conn)
         
     v = Toplevel()
     
+<<<<<<< HEAD
     label = Label(v, text="Seleccionar pack: ")
     label.pack(side=LEFT)
+=======
+    label = Label(v, text = "Seleccionar pack: ")
+    label.pack(side = LEFT)
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
     
     packs = packs_db()
     
     en_pack = Spinbox(v, values = packs)
     en_pack.bind("<Return>", filtrar_busqueda)
+<<<<<<< HEAD
     en_pack.pack(side=LEFT)
+=======
+    en_pack.pack(side = LEFT)
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
     
     
 def packs_db():
     conn = crear_conexion()
     
+<<<<<<< HEAD
     cursor = conn.execute("SELECT FORMATO_PACK FROM PRODUCTOS")
+=======
+    cursor = conn.execute("SELECT DISTINCT FORMATO_PACK FROM PRODUCTOS ORDER BY FORMATO_PACK")
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
     
     packs = [row[0] for row in cursor]
     
@@ -173,6 +271,7 @@ def packs_db():
     
     return packs
     
+<<<<<<< HEAD
     
 def imprimir_aceites_denominacion_precio(cursor):
     v = Toplevel()
@@ -195,6 +294,18 @@ def imprimir_aceites_denominacion(cursor):
     lb = Listbox(v, width=150, yscrollcommand = sc.set)
     for row in cursor:
         lb.insert(END, "Denominacion: " +row[1])
+=======
+            
+def imprimir_aceites_denominacion(cursor):
+    v = Toplevel()
+    
+    sc = Scrollbar(v)
+    sc.pack(side=RIGHT, fill=Y)
+    
+    lb = Listbox(v, width=150, yscrollcommand = sc.set)
+    for row in cursor:
+        lb.insert(END, "Denominacion: " +row[0])
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
         lb.insert(END, "")
         
         lb.pack(side = LEFT, fill = BOTH)
@@ -203,6 +314,7 @@ def imprimir_aceites_denominacion(cursor):
 
 def ventana_principal():
     top = Tk()
+<<<<<<< HEAD
     almacenar = Button(top, text="Almacenar Aceites", command = cargar)
     almacenar.pack(side = TOP)
     Ordenar = Button(top, text="Ordenar por Precio", command = ordenar_precio)
@@ -211,6 +323,21 @@ def ventana_principal():
     Mostrar.pack(side = TOP)
     Buscar = Button(top, text="Buscar Opiniones", command = buscar_opiniones)
     Buscar.pack(side = TOP)
+=======
+    
+    almacenar = Button(top, text="Almacenar Aceites", command = cargar)
+    almacenar.pack(side = LEFT)
+    
+    Ordenar = Button(top, text="Ordenar por Precio", command = ordenar_precio)
+    Ordenar.pack(side = LEFT)
+    
+    Mostrar = Button(top, text="Mostrar Packs", command = mostrar_packs)
+    Mostrar.pack(side = LEFT)
+    
+    Buscar = Button(top, text="Buscar Opiniones", command = buscar_opiniones)
+    Buscar.pack(side = LEFT)
+    
+>>>>>>> 5297b9636fccc907001d97af6bb5448e6e66e799
     top.mainloop()
 
 if __name__ == '__main__':
