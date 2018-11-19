@@ -19,26 +19,6 @@ from datetime import datetime
 import sqlite3 as dbapi
 
 
-def obtener_temas():
-    conn = crear_conexion()
-    
-    cursor = conn.execute("SELECT ANTETITULO,TITULO,ENLACE,DESCRIPCION,FECHA FROM NOTICIAS")
-    temas = [row for row in cursor]
-    
-    cerrar_conexion(conn)
-    
-    return temas
-
-
-def crear_conexion():
-    conn = dbapi.connect("eCartelera.db")
-    conn.text_factory = str
-    return conn
-
-
-def cerrar_conexion(conn):
-    conn.close()
-
 
 def cargar():
     lista_noticias = []
@@ -99,6 +79,26 @@ def procesar_pagina(d:str):
     fichero = urllib.request.urlopen(d)
     documento = BeautifulSoup(fichero, "lxml")
     return documento
+
+
+def formatear_fecha(date):
+    meses = {"Enero":"01",
+             "Febrero":"02",
+             "Marzo":"03",
+             "Abril":"04",
+             "Mayo":"05",
+             "Junio":"06",
+             "Julio":"07",
+             "Agosto":"08",
+             "Septiembre":"09",
+             "Octubre":"10",
+             "Noviembre":"11",
+             "Diciembre":"12"}
+    fecha = re.match(r'.(\d\d)\s(.{3})\s*(\d{4}).*', date)
+    # Groups devuelve las cadenas (o subcadenas) que coinciden con el patron
+    l = list(fecha.groups())
+    l[1] = meses[l[1]]
+    return tuple(l)
 
 
 
