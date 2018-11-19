@@ -21,8 +21,45 @@ from whoosh.qparser import QueryParser
 from bs4 import BeautifulSoup
 
 
+dir_index = "Index_noticias"
+
+def extraer_datos():
+    return []
+
 def cargar():
-    pass
+    noticias = extraer_datos()
+    i = 0
+    
+    if not os.path.exists(dir_index):
+        os.mkdir(dir_index)
+        
+    ix = create_in(dir_index, schema = definir_esquema())
+    
+    writer = ix.writer()
+    
+    for noticia in noticias:
+        add_doc(writer, noticia)
+        i += 1
+        
+    writer.commit()
+    
+    messagebox.showinfo("Fin de indexado", "Se han indexado " + str(i) + " noticias.")
+    
+
+def add_doc(writer, noticia):
+    writer.add_document(antetitulo = noticia[0],
+                        titulo = noticia[1],
+                        enlaceImagen = noticia[2],
+                        descripcion = noticia[3],
+                        fechaPublicacion = datetime.strptime(noticia[4], '%Y%m%d'))
+
+
+def definir_esquema():
+    return Schema(antetitulo=TEXT(stored = True),
+                  titulo=TEXT(stored = True),
+                  enlaceImagen=ID(stored = True),
+                  descripcion=TEXT,
+                  fechaPublicacion=DATETIME(stored = True))
 
 
 def busqueda_titulo_descripcion():
