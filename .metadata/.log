@@ -1090,3 +1090,477 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jface.text 2 0 2018-11-05 13:50:01.653
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2018-11-18 18:23:48.681 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-11-18 18:24:11.667
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Alvaro Calle Glez'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.shared_core 4 4 2018-11-18 18:24:11.996
+!MESSAGE Illegal char <> at index 108: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/practicaBSG2.py
+!STACK 0
+java.nio.file.InvalidPathException: Illegal char <> at index 108: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/practicaBSG2.py
+	at sun.nio.fs.WindowsPathParser.normalize(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPath.parse(Unknown Source)
+	at sun.nio.fs.WindowsUriSupport.fromUri(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.getPath(Unknown Source)
+	at java.nio.file.Paths.get(Unknown Source)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1071)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.addInfoToModuleOnRestoreInsertCommand(AbstractAdditionalDependencyInfo.java:529)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.processInsert(AbstractAdditionalInfoWithBuild.java:192)
+	at org.python.pydev.core.DeltaSaver$DeltaInsertCommand.processWith(DeltaSaver.java:98)
+	at org.python.pydev.core.DeltaSaver.processDeltas(DeltaSaver.java:318)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.restoreSavedInfo(AbstractAdditionalInfoWithBuild.java:103)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.loadContentsFromFile(AbstractAdditionalDependencyInfo.java:499)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.load(AbstractAdditionalDependencyInfo.java:414)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.getAdditionalInfoForProject(AdditionalProjectInterpreterInfo.java:247)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.recreateAllInfo(AdditionalProjectInterpreterInfo.java:330)
+	at com.python.pydev.analysis.additionalinfo.builders.InterpreterObserver.notifyProjectPythonpathRestored(InterpreterObserver.java:41)
+	at org.python.pydev.plugin.nature.PythonNature$RebuildPythonNatureModules.run(PythonNature.java:197)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-18 18:24:48.519
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-18 18:24:48.520
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.expressions 4 201 2018-11-18 18:25:42.290
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:127)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:97)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:31)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:306)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:248)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:216)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:235)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:106)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:148)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:128)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:63)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:219)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:174)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:267)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.menuAboutToShow(CommonNavigatorManager.java:283)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:339)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:470)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:497)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:256)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5160)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4828)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:262)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4277)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3818)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2018-11-18 18:25:42.291
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+!SESSION 2018-11-19 10:31:00.372 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.python.pydev.shared_core 4 4 2018-11-19 10:31:14.372
+!MESSAGE Error. returning: 0
+!STACK 0
+java.nio.file.NoSuchFileException: C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\__init__.py
+	at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(Unknown Source)
+	at sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.readAttributes(Unknown Source)
+	at java.nio.file.Files.readAttributes(Unknown Source)
+	at java.nio.file.Files.getLastModifiedTime(Unknown Source)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1081)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1072)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.addInfoToModuleOnRestoreInsertCommand(AbstractAdditionalDependencyInfo.java:529)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.processInsert(AbstractAdditionalInfoWithBuild.java:192)
+	at org.python.pydev.core.DeltaSaver$DeltaInsertCommand.processWith(DeltaSaver.java:98)
+	at org.python.pydev.core.DeltaSaver.processDeltas(DeltaSaver.java:318)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.restoreSavedInfo(AbstractAdditionalInfoWithBuild.java:103)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.loadContentsFromFile(AbstractAdditionalDependencyInfo.java:499)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.load(AbstractAdditionalDependencyInfo.java:414)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.getAdditionalInfoForProject(AdditionalProjectInterpreterInfo.java:247)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.recreateAllInfo(AdditionalProjectInterpreterInfo.java:330)
+	at com.python.pydev.analysis.additionalinfo.builders.InterpreterObserver.notifyProjectPythonpathRestored(InterpreterObserver.java:41)
+	at org.python.pydev.plugin.nature.PythonNature$RebuildPythonNatureModules.run(PythonNature.java:197)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-11-19 10:31:14.560
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Alvaro Calle Glez'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-19 10:37:41.781
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-19 10:37:41.783
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.expressions 4 201 2018-11-19 10:38:53.132
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:127)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:97)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:31)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:306)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:248)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:216)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:235)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:106)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:148)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:128)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:63)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:219)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:174)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:267)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.menuAboutToShow(CommonNavigatorManager.java:283)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:339)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:470)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:497)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:256)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5160)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4828)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:262)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4277)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3818)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2018-11-19 10:38:53.133
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+
+!ENTRY org.python.pydev.shared_core 2 2 2018-11-19 10:44:03.627
+!MESSAGE Warning: computed 14510 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py activationToken: qualifier:TE isInCalltip:false alreadyHasParams:false]
+!STACK 0
+java.lang.RuntimeException: Warning: computed 14510 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py activationToken: qualifier:TE isInCalltip:false alreadyHasParams:false]
+	at org.python.pydev.core.log.Log.logWarn(Log.java:49)
+	at org.python.pydev.ast.codecompletion.PyCodeCompletion.getCodeCompletionProposals(PyCodeCompletion.java:213)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.getPythonProposals(PythonCompletionProcessor.java:235)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.computeCompletionProposals(PythonCompletionProcessor.java:169)
+	at org.python.pydev.editor.codecompletion.SimpleAssistProcessor.computeCompletionProposals(SimpleAssistProcessor.java:287)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$3.run(ContentAssistant.java:1931)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1928)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:565)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:560)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:494)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:487)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener$1.run(ContentAssistant.java:371)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.python.pydev.shared_core 2 2 2018-11-19 10:44:32.725
+!MESSAGE Warning: computed 14510 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py activationToken: qualifier:TE isInCalltip:false alreadyHasParams:false]
+!STACK 0
+java.lang.RuntimeException: Warning: computed 14510 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py activationToken: qualifier:TE isInCalltip:false alreadyHasParams:false]
+	at org.python.pydev.core.log.Log.logWarn(Log.java:49)
+	at org.python.pydev.ast.codecompletion.PyCodeCompletion.getCodeCompletionProposals(PyCodeCompletion.java:213)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.getPythonProposals(PythonCompletionProcessor.java:235)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.computeCompletionProposals(PythonCompletionProcessor.java:169)
+	at org.python.pydev.editor.codecompletion.SimpleAssistProcessor.computeCompletionProposals(SimpleAssistProcessor.java:287)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$3.run(ContentAssistant.java:1931)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1928)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:565)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:560)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:494)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:487)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener$1.run(ContentAssistant.java:371)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.python.pydev.shared_core 2 2 2018-11-19 11:18:15.265
+!MESSAGE Warning: computed 12946 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py activationToken: qualifier:st isInCalltip:false alreadyHasParams:false]
+!STACK 0
+java.lang.RuntimeException: Warning: computed 12946 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py activationToken: qualifier:st isInCalltip:false alreadyHasParams:false]
+	at org.python.pydev.core.log.Log.logWarn(Log.java:49)
+	at org.python.pydev.ast.codecompletion.PyCodeCompletion.getCodeCompletionProposals(PyCodeCompletion.java:213)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.getPythonProposals(PythonCompletionProcessor.java:235)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.computeCompletionProposals(PythonCompletionProcessor.java:169)
+	at org.python.pydev.editor.codecompletion.SimpleAssistProcessor.computeCompletionProposals(SimpleAssistProcessor.java:287)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$3.run(ContentAssistant.java:1931)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1928)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:565)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:560)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:494)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:487)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener$1.run(ContentAssistant.java:371)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.python.pydev.shared_core 2 2 2018-11-19 11:22:30.614
+!MESSAGE Warning: computed 32395 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py activationToken:r.__getitem__ qualifier:st isInCalltip:false alreadyHasParams:false]
+!STACK 0
+java.lang.RuntimeException: Warning: computed 32395 completions (trimming to 10000).
+Request: CompletionRequest[ editorFile:C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py activationToken:r.__getitem__ qualifier:st isInCalltip:false alreadyHasParams:false]
+	at org.python.pydev.core.log.Log.logWarn(Log.java:49)
+	at org.python.pydev.ast.codecompletion.PyCodeCompletion.getCodeCompletionProposals(PyCodeCompletion.java:213)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.getPythonProposals(PythonCompletionProcessor.java:235)
+	at org.python.pydev.editor.codecompletion.PythonCompletionProcessor.computeCompletionProposals(PythonCompletionProcessor.java:169)
+	at org.python.pydev.editor.codecompletion.SimpleAssistProcessor.computeCompletionProposals(SimpleAssistProcessor.java:287)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$3.run(ContentAssistant.java:1931)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1928)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:565)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:560)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:494)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:487)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener$1.run(ContentAssistant.java:371)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.eclipse.core.expressions 4 201 2018-11-19 11:30:10.928
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:127)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:97)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:31)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:306)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:248)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:216)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:235)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:106)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:148)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:128)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:63)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:219)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:174)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:267)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.menuAboutToShow(CommonNavigatorManager.java:283)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:339)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:470)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:497)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:256)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5160)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4828)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1656)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5110)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:262)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4277)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3818)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2018-11-19 11:30:10.928
+!MESSAGE No property tester contributes a property org.eclipse.wst.jsdt.chromium.debug.core.isJsFile to type class org.python.pydev.navigator.elements.PythonFile
