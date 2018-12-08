@@ -1,53 +1,55 @@
 -- VERSION_5
 -- START DISKCACHE_2
 C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\.metadata\.plugins\org.eclipse.core.resources\.projects\practicas\com.python.pydev.analysis\v2_indexcache
-src.beautiful_practicados|1542623198112940000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\beautiful_practicados.py
+src.beautiful_practicados|1544287175892602000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\beautiful_practicados.py
+src.practica_dos|1544287175951639000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py
 src.ejemplo|1542622995075980000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py
 src.practicaBSG2|1542562773097178000|C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
 -- END DISKCACHE
 -- START DICTIONARY
-6
-1=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
-5=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py
-4=src.beautiful_practicados
-3=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\beautiful_practicados.py
-6=src.ejemplo
-2=src.practicaBSG2
+8
+3=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practicaBSG2.py
+7=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\ejemplo.py
+6=src.beautiful_practicados
+5=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\beautiful_practicados.py
+2=src.practica_dos
+8=src.ejemplo
+4=src.practicaBSG2
+1=C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\practicas\src\practica_dos.py
 -- END DICTIONARY
 -- START TREE 1
-32
-add|0|
-alm|1|almacenar!1^318#5*19@
-apl|1|aplicacion!3^109#5*34@
-bus|4|buscar_opiniones!1^181#5*18@Buscar!1^324#5*19@busqueda_descripcion!5^24#5*50@busqueda_fecha!5^60#5*50@
-cad|0|
-car|2|cargar!3^43#5*34@cargar!1^32#5*18@
-cer|2|cerrar_conexion!3^39#5*34@cerrar_conexion!1^28#5*18@
-con|1|conn!1^175#5*19@
-cre|2|crear_conexion!3^33#5*34@crear_conexion!1^22#5*18@
-cur|1|cursor!1^122#9*19@
-dat|0|
-def|1|definir_pagina2!1^154#5*18@
-den|1|denominacion!1^70#13*19@
-dir|1|dir_index!5^22#1*51@
-en_|1|en_pack!1^250#5*19@
-enl|1|enlace!1^71#13*19@
-ext|0|
-for|2|formato!1^73#13*19@formatear_numero!1^142#5*18@
-imp|2|imprimir_aceites_denominacion!1^290#5*18@imprimir_aceites_denominacion_precio!1^197#5*18@
-lab|1|label!1^241#5*19@
-mos|2|mostrar_packs!1^222#5*18@Mostrar!1^322#5*19@
-obt|1|obtener_temas!3^22#5*34@
-opi|1|opiniones!1^75#13*19@
-ord|2|Ordenar!1^320#5*19@ordenar_precio!1^173#5*18@
-pac|2|packs_db!1^259#5*18@packs!1^248#5*19@
-pre|1|precio!1^74#13*19@
-pro|2|procesar_pagina!1^166#5*18@procesar_pagina!3^98#5*34@
-sal|1|salir!3^105#5*34@
-sel|1|seleccionar_pagina2!3^86#5*34@
-tag|11|tag_reg_precio!1^64#13*19@tag_pack!1^56#13*19@tag_rating!1^68#13*19@tag_formato!1^78#17*19@tag_span!1^96#17*19@tag_a!1^97#17*19@tag_h2!1^59#13*19@tag_box_price!1^60#13*19@tag_precio!1^84#17*19@tag_deno!1^62#13*19@tag_enlace!1^63#13*19@
-v|1|v!1^238#5*19@
-ven|1|ventana_principal!1^315#5*18@
+31
+add|1|add_doc!1^135#5*18@
+alm|1|almacenar!3^318#5*35@
+apl|2|aplicacion!5^109#5*50@aplicacion!1^274#5*18@
+bus|7|buscar_opiniones!3^181#5*34@Buscar!3^324#5*35@busqueda_descripcion!1^234#5*18@busqueda_descripcion!7^24#5*66@busqueda_titulo_descripcion!1^151#5*18@busqueda_fecha!1^188#5*18@busqueda_fecha!7^60#5*66@
+car|3|cargar!5^23#5*50@cargar!1^115#5*18@cargar!3^32#5*34@
+cer|1|cerrar_conexion!3^28#5*34@
+con|1|conn!3^175#5*35@
+cre|1|crear_conexion!3^22#5*34@
+cur|1|cursor!3^122#9*35@
+def|2|definir_pagina2!3^154#5*34@definir_esquema!1^143#5*18@
+den|1|denominacion!3^70#13*35@
+dir|2|dir_index!7^22#1*67@dir_index!1^24#1*19@
+en_|1|en_pack!3^250#5*35@
+enl|1|enlace!3^71#13*35@
+ext|1|extraer_datos!1^44#5*18@
+f|1|f!1^78#13*19@
+for|4|formatear_fecha!5^84#5*50@formatear_fecha!1^86#5*18@formato!3^73#13*35@formatear_numero!3^142#5*34@
+imp|2|imprimir_aceites_denominacion!3^290#5*34@imprimir_aceites_denominacion_precio!3^197#5*34@
+lab|1|label!3^241#5*35@
+mos|2|mostrar_packs!3^222#5*34@Mostrar!3^322#5*35@
+not|1|noticia!1^80#13*19@
+opi|1|opiniones!3^75#13*35@
+ord|2|Ordenar!3^320#5*35@ordenar_precio!3^173#5*34@
+pac|2|packs_db!3^259#5*34@packs!3^248#5*35@
+pre|1|precio!3^74#13*35@
+pro|3|procesar_pagina!3^166#5*34@procesar_pagina!1^39#5*18@procesar_pagina!5^78#5*50@
+sal|2|salir!5^105#5*50@salir!1^270#5*18@
+sel|2|seleccionar_pagina2!1^27#5*18@seleccionar_pagina2!5^66#5*50@
+tag|11|tag_reg_precio!3^64#13*35@tag_pack!3^56#13*35@tag_rating!3^68#13*35@tag_formato!3^78#17*35@tag_span!3^96#17*35@tag_a!3^97#17*35@tag_h2!3^59#13*35@tag_box_price!3^60#13*35@tag_precio!3^84#17*35@tag_deno!3^62#13*35@tag_enlace!3^63#13*35@
+v|1|v!3^238#5*35@
+ven|1|ventana_principal!3^315#5*34@
 -- END TREE
 -- START TREE 2
 0

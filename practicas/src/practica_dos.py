@@ -69,12 +69,7 @@ def extraer_datos():
             enlace_imagen = tag_enlace_imagen['src']
             descripcion = tag_descripcion.string.strip()
             fecha = tag_fecha.string.strip()
-<<<<<<< HEAD
-                                
-=======
-            print(fecha)
-            
->>>>>>> 057b7210565465b4a7eeb32718a083d6cde23dd4
+
             f =formatear_fecha(fecha)
             
             noticia = [antetitulo, titulo, enlace_imagen, descripcion, f]
@@ -97,10 +92,7 @@ def formatear_fecha(date):
              "Noviembre":"11",
              "Noviembr":"11",
              "noviembr":"11",
-<<<<<<< HEAD
              "noviembre": "11",
-=======
->>>>>>> 057b7210565465b4a7eeb32718a083d6cde23dd4
              "Diciembre":"12"}
     
     fecha = re.match(r'.*(\d\d)\s*.{2}\s*([a-zA-Z]{3,})\s*.{2}\s*(\d{4}).*', date)
