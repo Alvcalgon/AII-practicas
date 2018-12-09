@@ -1581,3 +1581,104 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.python.pydev.shared_core 4 4 2018-12-08 17:44:38.187
 !MESSAGE Info: Rebuilding internal caches: C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\.metadata\.plugins\org.eclipse.core.resources\.projects\practicaDjangoG2\com.python.pydev.analysis\AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
+!SESSION 2018-12-08 17:48:08.475 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-12-08 17:48:18.918
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Alvaro Calle Glez'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.shared_core 4 4 2018-12-08 17:48:19.057
+!MESSAGE Illegal char <> at index 117: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/beautiful_practicados.py
+!STACK 0
+java.nio.file.InvalidPathException: Illegal char <> at index 117: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/beautiful_practicados.py
+	at sun.nio.fs.WindowsPathParser.normalize(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPath.parse(Unknown Source)
+	at sun.nio.fs.WindowsUriSupport.fromUri(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.getPath(Unknown Source)
+	at java.nio.file.Paths.get(Unknown Source)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1071)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.addInfoToModuleOnRestoreInsertCommand(AbstractAdditionalDependencyInfo.java:529)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.processInsert(AbstractAdditionalInfoWithBuild.java:192)
+	at org.python.pydev.core.DeltaSaver$DeltaInsertCommand.processWith(DeltaSaver.java:98)
+	at org.python.pydev.core.DeltaSaver.processDeltas(DeltaSaver.java:318)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.restoreSavedInfo(AbstractAdditionalInfoWithBuild.java:103)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.loadContentsFromFile(AbstractAdditionalDependencyInfo.java:499)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.load(AbstractAdditionalDependencyInfo.java:414)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.getAdditionalInfoForProject(AdditionalProjectInterpreterInfo.java:247)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.recreateAllInfo(AdditionalProjectInterpreterInfo.java:330)
+	at com.python.pydev.analysis.additionalinfo.builders.InterpreterObserver.notifyProjectPythonpathRestored(InterpreterObserver.java:41)
+	at org.python.pydev.plugin.nature.PythonNature$RebuildPythonNatureModules.run(PythonNature.java:197)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.python.pydev.shared_core 4 4 2018-12-08 17:48:19.057
+!MESSAGE Illegal char <> at index 108: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/practica_dos.py
+!STACK 0
+java.nio.file.InvalidPathException: Illegal char <> at index 108: C:/Users/Alvaro Calle Glez/Desktop/Curso 18-19/AII/practicasEval/AII-practicas/practicas/src/practica_dos.py
+	at sun.nio.fs.WindowsPathParser.normalize(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPathParser.parse(Unknown Source)
+	at sun.nio.fs.WindowsPath.parse(Unknown Source)
+	at sun.nio.fs.WindowsUriSupport.fromUri(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.getPath(Unknown Source)
+	at java.nio.file.Paths.get(Unknown Source)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1071)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.addInfoToModuleOnRestoreInsertCommand(AbstractAdditionalDependencyInfo.java:529)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.processInsert(AbstractAdditionalInfoWithBuild.java:192)
+	at org.python.pydev.core.DeltaSaver$DeltaInsertCommand.processWith(DeltaSaver.java:98)
+	at org.python.pydev.core.DeltaSaver.processDeltas(DeltaSaver.java:318)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalInfoWithBuild.restoreSavedInfo(AbstractAdditionalInfoWithBuild.java:103)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.loadContentsFromFile(AbstractAdditionalDependencyInfo.java:499)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.load(AbstractAdditionalDependencyInfo.java:414)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.getAdditionalInfoForProject(AdditionalProjectInterpreterInfo.java:247)
+	at com.python.pydev.analysis.additionalinfo.AdditionalProjectInterpreterInfo.recreateAllInfo(AdditionalProjectInterpreterInfo.java:330)
+	at com.python.pydev.analysis.additionalinfo.builders.InterpreterObserver.notifyProjectPythonpathRestored(InterpreterObserver.java:41)
+	at org.python.pydev.plugin.nature.PythonNature$RebuildPythonNatureModules.run(PythonNature.java:197)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.python.pydev.shared_core 4 4 2018-12-08 17:49:02.980
+!MESSAGE Info: Rebuilding internal caches: C:\Users\Alvaro Calle Glez\Desktop\Curso 18-19\AII\practicasEval\AII-practicas\.metadata\.plugins\org.eclipse.core.resources\.projects\individualDjango\com.python.pydev.analysis\AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
+!SESSION 2018-12-09 16:10:37.763 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-12-09 16:10:58.924
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Alvaro Calle Glez'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2018-12-09 18:13:48.426 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-12-09 18:14:38.750
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Alvaro Calle Glez'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-12-09 18:15:33.247
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-12-09 18:15:33.249
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
