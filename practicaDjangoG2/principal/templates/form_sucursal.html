@@ -1,0 +1,12 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+<h2> Formulario Sucursal</h2>
+ 
+ <form action="/sucursal/edit/" method="post">
+ 	{% csrf_token %}
+ 	{{ form }}
+ 	<input type="submit" value="Submit" />
+ </form>
+ 
+{% endblock %}
