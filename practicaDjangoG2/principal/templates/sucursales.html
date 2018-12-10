@@ -1,0 +1,17 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+<h2> Sucursales agrupadas por bancos</h2>
+<ul>
+	{% for sucursal in sucursales %}
+	<li> 
+		{{sucursal.sucursalId}} -   {{sucursal.direccion}} - {{sucursal.banco}}
+        </li>
+	
+	{% empty %}
+	<li> No hay sucursales registradas </li>
+	{% endfor %}
+
+</ul> 
+{% endblock %}
+	
