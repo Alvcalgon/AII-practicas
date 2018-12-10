@@ -1,0 +1,24 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+<h2> Usuarios con más dinero en cuentas </h2>
+<ul>
+	{% for dato in usuario%}
+	<li> 
+		{{dato.nombre}} -   {{dato.apellidos}} - {{dato.email}}
+		<ul>
+		 {% for item in {{dato.bancos}} %}
+		 	<li>
+				{{item.nombre}}
+			</li>
+		 {% endfor %}
+		</ul>
+
+        </li>
+	
+	{% empty %}
+	<li> No hay usuarios registrados </li>
+	{% endfor %}
+
+</ul> 
+{% endblock %}
