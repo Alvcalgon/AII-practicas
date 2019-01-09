@@ -21,63 +21,51 @@ def cargar_tarifas_hablar_navegar():
     for e in l:
         tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
 
-        #tag_titulo_tabla = e.find_all("div", class_ = ["datos"])
-        #for i in tag_titulo_tabla:
-            #tag_titulo = i.find("div", class_ = ["titulo"])
-            #titulo = tag_titulo.string.strip()
             
-        tag_div_minutos_tarifa = e.find_all("div", class_ = ["col_2"])
-        for i in tag_div_minutos_tarifa:
-            tag_minutos_tarifa = i.find("ul")
-            #tag_minutos_tarifa = i.find("ul")
-            minutos_tarifa = tag_minutos_tarifa.string
-            if(minutos_tarifa == None):
-                minutos_tarifa = tag_minutos_tarifa
+        tag_div_minutos_tarifa = e.find("div", class_ = ["col_2"])
+        tag_minutos_tarifa = tag_div_minutos_tarifa.find("ul")
                 
          
-        tag_div_internet_tarifa = e.find_all("div", class_ = ["col_3"])
-        for j in tag_div_internet_tarifa:
-            tag_internet_tarifa = j.find("li")
-            internet_tarifa = tag_internet_tarifa.string.strip()
+        tag_div_internet_tarifa = e.find("div", class_ = ["col_3"])
+        tag_internet_tarifa = tag_div_internet_tarifa.find("li")
          
-        tag_ul_promocion_tarifa = e.find_all("ul", class_= ["promo"])
-        for z in tag_ul_promocion_tarifa:
-            tag_promocion_tarifa = z.find("li")
-            promocion_tarifa = tag_promocion_tarifa.string.strip()
+        tag_ul_promocion_tarifa = e.find("ul", class_= ["promo"])
+        tag_promocion_tarifa = tag_ul_promocion_tarifa.find("li")
+        
              
-        tag_div_precio_tarifa = e.find_all("div", class_ = ["precio"])
-        for a in tag_div_precio_tarifa:
-            tag_precio_tarifa = a.find("strong")
-            precio_tarifa = tag_precio_tarifa.string.strip()
+        tag_div_precio_tarifa = e.find("div", class_ = ["precio"])
+        tag_precio_tarifa = tag_div_precio_tarifa.find("strong")
+        precio_tarifa = tag_precio_tarifa.string.strip()
              
              
              
         nombre_tarifa = tag_nombre_tarifa.string.strip()
-         
+        
+        minutos_tarifa = tag_minutos_tarifa.string
+        
+        internet_tarifa = tag_internet_tarifa.string.strip()
+        
+        promocion_tarifa = tag_promocion_tarifa.string.strip()
+        
         precio_tarifa = tag_precio_tarifa.string.strip()
          
-        if(nombre_tarifa == None):
-            nombre_tarifa = ""
-        elif (minutos_tarifa == None):
-            minutos_tarifa = ""
-        elif (internet_tarifa == None):
-            internet_tarifa = ""
+    
+        if (minutos_tarifa == None):
+            minutos_tarifa = tag_minutos_tarifa.find(string = re.compile(""))
         elif (promocion_tarifa == None):
-            promocion_tarifa = ""
-        elif(precio_tarifa == None):
-            precio_tarifa = ""    
+            promocion_tarifa = "Sin promoción"
             
         
         
         tarifa = [nombre_tarifa, minutos_tarifa, internet_tarifa, promocion_tarifa, precio_tarifa+' €']
-        #tarifa = [nombre_tarifa]
+    
         lista_tarifas.append(tarifa)
         
         
     return (lista_tarifas)
     
     
-#print(cargar_tarifas_hablar_navegar())
+print(cargar_tarifas_hablar_navegar())
 
 # Tarifas ADSL o Fibra
 
@@ -97,9 +85,15 @@ def cargar_adsl_fibra():
         tag_velocidad_adsl = e.find("h4")
         
         tag_div_fijo = e.find("div", class_ = ["col_3"])
-        tag_fijo = tag_div_fijo.find_all("li")
-        for i in tag_fijo:
-            fijo = i.string.strip()
+        tag_ul_fijo = tag_div_fijo.find("ul")
+        tag_fijo = tag_ul_fijo.find("li")
+        fijo = tag_fijo.string.strip()
+        tag_nacionales = tag_ul_fijo.find_all("li")
+        for i in tag_nacionales:
+            tag_nacionales = i.string.strip()
+        
+        #for i in tag_fijo:
+            #fijo = i.string.strip()
         
         tag_ul_promo = e.find("ul", class_ = ["promo"])
         tag_promo = tag_ul_promo.find("li")
@@ -107,6 +101,7 @@ def cargar_adsl_fibra():
         
         nombre_tarifa = tag_nombre_tarifa.string.strip()
         velocidad_adsl = tag_velocidad_adsl.string.strip()
+        fijo = fijo + ' ' + tag_nacionales
         promo = tag_promo.string.strip()
         precio = tag_div_precio.string.strip()
         
@@ -116,7 +111,7 @@ def cargar_adsl_fibra():
         
     return (lista_tarifas)
 
-print(cargar_adsl_fibra())
+#(cargar_adsl_fibra())
         
         
                 
