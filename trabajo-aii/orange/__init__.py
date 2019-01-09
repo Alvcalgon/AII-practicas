@@ -77,6 +77,47 @@ def cargar_tarifas_hablar_navegar():
     return (lista_tarifas)
     
     
-print(cargar_tarifas_hablar_navegar())
+#print(cargar_tarifas_hablar_navegar())
+
+# Tarifas ADSL o Fibra
+
+def extraer_adsl_fibra():
+    f = urllib.request.urlopen("https://www.phonehouse.es/tarifas/orange/adsl-fibra.html")
+    s = BeautifulSoup(f, "lxml")
+    l = s.find_all("li", class_=["linea"])
+    return l
+
+def cargar_adsl_fibra():
+    lista_tarifas = []
+    
+    l = extraer_adsl_fibra()
+    
+    for e in l:
+        tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+        tag_velocidad_adsl = e.find("h4")
+        
+        tag_div_fijo = e.find("div", class_ = ["col_3"])
+        tag_fijo = tag_div_fijo.find_all("li")
+        for i in tag_fijo:
+            fijo = i.string.strip()
+        
+        tag_ul_promo = e.find("ul", class_ = ["promo"])
+        tag_promo = tag_ul_promo.find("li")
+        tag_div_precio = e.find("strong")
+        
+        nombre_tarifa = tag_nombre_tarifa.string.strip()
+        velocidad_adsl = tag_velocidad_adsl.string.strip()
+        promo = tag_promo.string.strip()
+        precio = tag_div_precio.string.strip()
+        
+        tarifa = [nombre_tarifa, velocidad_adsl+ ' ADSL', fijo, promo, precio+' €']
+        
+        lista_tarifas.append(tarifa)
+        
+    return (lista_tarifas)
+
+print(cargar_adsl_fibra())
+        
+        
                 
     
