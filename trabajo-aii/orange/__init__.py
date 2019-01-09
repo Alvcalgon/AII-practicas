@@ -65,7 +65,7 @@ def cargar_tarifas_hablar_navegar():
     return (lista_tarifas)
     
     
-print(cargar_tarifas_hablar_navegar())
+#print(cargar_tarifas_hablar_navegar())
 
 # Tarifas ADSL o Fibra
 
@@ -112,6 +112,72 @@ def cargar_adsl_fibra():
     return (lista_tarifas)
 
 #(cargar_adsl_fibra())
+
+# Tarifas Fibra + Movil + TV
+
+def extraer_paquetes():
+    f = urllib.request.urlopen("https://www.phonehouse.es/tarifas/orange/love.html")
+    s = BeautifulSoup(f, "lxml")
+    l = s.find_all("li", class_=["linea"])
+    return l
+
+def cargar_paquetes():
+    lista_paquetes = []
+    
+    l = extraer_paquetes()
+    
+    for e in l:
+        tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+        tag_velocidad = e.find("h4")
+        
+        tag_div_fijo = e.find("div", class_ = ["col_3"])
+        tag_ul_fijo = tag_div_fijo.find("ul")
+        tag_fijo = tag_ul_fijo.find("li")
+        fijo = tag_fijo.string.strip()
+        tag_li_min_fijo = tag_ul_fijo.find_all("li")
+        for i in tag_li_min_fijo:
+            tag_min_fijo = i.string.strip()
+        
+        tag_div_movil = e.find("div", class_ = ["col_4"])
+        tag_ul_movil = tag_div_movil.find("ul")
+        tag_movil = tag_ul_movil.find("li")
+        movil = tag_movil.string.strip()
+        tag_li_gb_movil = tag_ul_movil.find_all("li")
+        for i in tag_li_gb_movil:
+            tag_gb_movil = i.string.strip()
+            
+        tag_div_tv = e.find("div", class_ = ["col_5"])
+        tag_p_tv = tag_div_tv.find("p")
+        if(tag_p_tv == None):
+            tv = "Sin TV"
+        else:
+            tv = tag_p_tv.string
+        
+        
+        tag_ul_promo = e.find("ul", class_ = ["promo"])
+        tag_promo = tag_ul_promo.find("li")
+        if(tag_promo == None):
+            promo = "Sin promoción"
+        else:
+            promo = tag_promo.string
+        
+        tag_div_precio = e.find("strong")
+        
+        nombre_tarifa = tag_nombre_tarifa.string.strip()
+        velocidad = tag_velocidad.string.strip()
+        movil = movil   
+        
+        precio = tag_div_precio.string.strip()
+        
+        paquete = [nombre_tarifa, velocidad, fijo + '. ' + tag_min_fijo, movil + '. ' + tag_gb_movil, tv, promo, precio+' €']
+        
+        lista_paquetes.append(paquete)
+        
+    return (lista_paquetes)
+
+print(cargar_paquetes())
+
+
         
         
                 
