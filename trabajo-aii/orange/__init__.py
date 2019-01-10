@@ -2,8 +2,8 @@
 from bs4 import BeautifulSoup
 import urllib.request
 from tkinter import *
-from tkinter import messagebox
 import sqlite3
+from numba.cuda.api import stream
 
 # Tarifas para hablar y navegar
 
@@ -124,56 +124,76 @@ def extraer_paquetes():
 def cargar_paquetes():
     lista_paquetes = []
     
-    l = extraer_paquetes()
-    
-    for e in l:
-        tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
-        tag_velocidad = e.find("h4")
-        
-        tag_div_fijo = e.find("div", class_ = ["col_3"])
-        tag_ul_fijo = tag_div_fijo.find("ul")
-        tag_fijo = tag_ul_fijo.find("li")
-        fijo = tag_fijo.string.strip()
-        tag_li_min_fijo = tag_ul_fijo.find_all("li")
-        for i in tag_li_min_fijo:
-            tag_min_fijo = i.string.strip()
-        
-        tag_div_movil = e.find("div", class_ = ["col_4"])
-        tag_ul_movil = tag_div_movil.find("ul")
-        tag_movil = tag_ul_movil.find("li")
-        movil = tag_movil.string.strip()
-        tag_li_gb_movil = tag_ul_movil.find_all("li")
-        for i in tag_li_gb_movil:
-            tag_gb_movil = i.string.strip()
+    paginas = seleccionar_pagina()
+    print("Paginas de paquetes", len(paginas))
+    for pagina in paginas:
+        print(pagina)
+        documento = procesar_pagina(pagina)
+        l = documento.find_all("li", class_=["linea"])
+        for e in l:
+            tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+            tag_velocidad = e.find("h4")
             
-        tag_div_tv = e.find("div", class_ = ["col_5"])
-        tag_p_tv = tag_div_tv.find("p")
-        if(tag_p_tv == None):
-            tv = "Sin TV"
-        else:
-            tv = tag_p_tv.string
-        
-        
-        tag_ul_promo = e.find("ul", class_ = ["promo"])
-        tag_promo = tag_ul_promo.find("li")
-        if(tag_promo == None):
-            promo = "Sin promoción"
-        else:
-            promo = tag_promo.string
-        
-        tag_div_precio = e.find("strong")
-        
-        nombre_tarifa = tag_nombre_tarifa.string.strip()
-        velocidad = tag_velocidad.string.strip()
-        movil = movil   
-        
-        precio = tag_div_precio.string.strip()
-        
-        paquete = [nombre_tarifa, velocidad, fijo + '. ' + tag_min_fijo, movil + '. ' + tag_gb_movil, tv, promo, precio+' €']
-        
-        lista_paquetes.append(paquete)
+            tag_div_fijo = e.find("div", class_ = ["col_3"])
+            tag_ul_fijo = tag_div_fijo.find("ul")
+            tag_fijo = tag_ul_fijo.find("li")
+            fijo = tag_fijo.string
+            tag_li_min_fijo = tag_ul_fijo.find_all("li")
+            for i in tag_li_min_fijo:
+                tag_min_fijo = i.string.strip()
+            
+            tag_div_movil = e.find("div", class_ = ["col_4"])
+            tag_ul_movil = tag_div_movil.find("ul")
+            tag_movil = tag_ul_movil.find("li")
+            movil = tag_movil.string.strip()
+            tag_li_gb_movil = tag_ul_movil.find_all("li")
+            for i in tag_li_gb_movil:
+                tag_gb_movil = i.string.strip()
+                
+            tag_div_tv = e.find("div", class_ = ["col_5"])
+            tag_p_tv = tag_div_tv.find("p")
+            if(tag_p_tv == None):
+                tv = "Sin TV"
+            else:
+                tv = tag_p_tv.string
+            
+            
+            tag_ul_promo = e.find("ul", class_ = ["promo"])
+            tag_promo = tag_ul_promo.find("li")
+            if(tag_promo == None):
+                promo = "Sin promoción"
+            else:
+                promo = tag_promo.string
+            
+            tag_div_precio = e.find("strong")
+            
+            nombre_tarifa = tag_nombre_tarifa.string.strip()
+            velocidad = tag_velocidad.string.strip()
+            movil = movil   
+            
+            precio = tag_div_precio.string.strip()
+            
+            paquete = [nombre_tarifa, velocidad, fijo + '. ' + tag_min_fijo, movil + '. ' + tag_gb_movil, tv, promo, precio+' €']
+            
+            lista_paquetes.append(paquete)
         
     return (lista_paquetes)
+
+def seleccionar_pagina():
+    url = "https://www.phonehouse.es/tarifas/orange/love.html"
+    paginas = []
+    
+    paginas.append(url)
+    for i in range (2, 8):
+        p = url + "?convergente-pagina=" + str(i) + "#convergente"
+        paginas.append(p)
+    
+    return paginas
+
+def procesar_pagina(d:str):
+    fichero = urllib.request.urlopen(d)
+    documento = BeautifulSoup(fichero, "lxml")
+    return documento
 
 print(cargar_paquetes())
 
