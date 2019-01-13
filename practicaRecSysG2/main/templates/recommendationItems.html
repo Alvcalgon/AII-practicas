@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Recommender System Book-Crossing</title>
+</head>
+<body>
+{% include 'header.html' %}
+<h1>Recommended books for the UserID: {{user.id}}</h1>
+{% for item in items %}
+<ul>
+<li>ISBN: {{item.ISBN}}</li>
+<li>Title: {{item.title}}</li>
+<li>Author: {{item.author}}</li>
+</ul>
+{% empty %}
+<h2> Insufficient user data </h2>
+{% endfor %}
+</body>
+</html>
