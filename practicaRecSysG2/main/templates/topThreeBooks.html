@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Recommender System Book-Crossing</title>
+</head>
+<body>
+{% include 'header.html' %}
+<h1>Top Three books</h1>
+{% for book in books %}
+<ul>
+<li>ISBN: {{book.ISBN}}</li>
+<li>Title: {{book.title}}</li>
+<li>Author: {{book.author}}</li>
+</ul>
+{% empty %}
+<h2> Error al mostrar los libros </h2>
+{% endfor %}
+</body>
+</html>

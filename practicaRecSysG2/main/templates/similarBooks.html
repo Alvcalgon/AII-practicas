@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Recommender System Book-Crossing</title>
+</head>
+<body>
+{% include 'header.html' %}
+<section>
+<h1>Two books more like to {{book.ISBN}} are:</h1>
+<l>
+{% for b in books %}
+<li>{{b.ISBN}}</li>
+<li>{{b.title}}</li>
+<li>{{b.author}}</li>
+<br />
+{% endfor %}
+</l>
+</section>
+</body>
+</html>

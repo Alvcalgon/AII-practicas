@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Recommender System Book-Crossing</title>
+</head>
+<body>
+{% include 'header.html' %}
+<section>
+<h1>Books and ratings for userid {{usuario.id}}</h1>
+{% for rating in usuario.rating_set.all %}
+<ul>
+<li>Book ISBN: {{rating.book.ISBN}} </li>
+<li>Book title: {{rating.book.title}} </li>
+<li>Book Rating: {{rating.ratingValue}} </li>
+</ul>
+<br/>
+{% empty %}
+<h2> User has not rated any book </h2>
+{% endfor %}
+</section>
+</body>
+</html>

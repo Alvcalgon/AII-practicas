@@ -110,7 +110,7 @@ def calculateSimilarItems(prefs, n=10):
         c += 1
         if c % 100 == 0: print ("%d / %d" % (c, len(itemPrefs)))
         # Find the most similar items to this one
-        scores = topMatches(itemPrefs, item, n=n, similarity=sim_distance)
+        scores = topMatches(itemPrefs, item, n=n, similarity=sim_pearson)
         result[item] = scores
     return result
 
