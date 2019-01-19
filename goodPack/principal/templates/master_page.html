@@ -1,10 +1,26 @@
-<!DOCTYPE html>
+{% load static %}
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title%}{% endblock %}</title>
+	</head>
+	<body>
+		<img src="{% static 'principal/logo-etsii.png' %}" alt="LOGO ETSII" />
+		<div class="menu_links" >
+			<header>
+				<nav>
+					<ul>
+						<li> <a href="populateDB"> Poblar Base de datos </a> </li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		
+		{% block content %}{% endblock %}
+		
+		
+		<footer>
+			<p>Copyright &copy; 2019 - GoodPack </p>
+		</footer>
+	</body>
 </html>

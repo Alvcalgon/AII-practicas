@@ -2124,6 +2124,7 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+<<<<<<< HEAD
 !SESSION 2019-01-19 16:50:44.947 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_191
@@ -6491,3 +6492,11 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.core.jobs 2 2 2019-01-19 16:52:38.065
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.python.pydev.shared_ui.editor.PyEditNotifier$3
+=======
+
+!ENTRY org.eclipse.jface.text 2 0 2019-01-18 16:27:21.061
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-01-18 16:27:21.062
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+>>>>>>> master
