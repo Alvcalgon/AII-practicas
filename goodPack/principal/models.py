@@ -39,10 +39,10 @@ class ADSL_FIBRA(models.Model):
         return self.nombre
     
 class Paquete(models.Model):
-    nombre = models.CharField(max_length = 50, blank = False)
+    nombre = models.CharField(max_length = 75, blank = False)
     velocidad = models.CharField(max_length = 30, blank = False)
-    fijo = models.CharField(max_length = 40, blank = False)
-    movil = models.CharField(max_length = 30, blank = False)
+    fijo = models.CharField(max_length = 60, blank = False)
+    movil = models.CharField(max_length = 40, blank = False)
     tv = models.CharField(max_length = 50)
     promociones = models.CharField(max_length = 75)
     coste_mensual = models.FloatField(validators = [MinValueValidator(0.0)])
