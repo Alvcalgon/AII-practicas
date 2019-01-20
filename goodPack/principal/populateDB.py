@@ -41,7 +41,7 @@ def populateFromVodafone():
     
     extraer_tarifas_moviles_vodafone()
     
-    extraer_adsl_fibra_vodafone()
+    #extraer_adsl_fibra_vodafone()
     
     extraer_paquetes_vodafone()
 
@@ -68,7 +68,7 @@ def populateFromOrange():
     print("Extrayendo datos de Orange...")
     
     extraer_tarifas_moviles_orange()
-    extraer_adsl_fibra_orange()
+    #extraer_adsl_fibra_orange()
     extraer_paquetes_orange()
     
     print("Datos de Orange extraidos")
