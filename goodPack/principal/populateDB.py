@@ -34,11 +34,18 @@ def populate_operator():
     Operadora.objects.create(nombre = w_nombre, enlace_web = w_enlace, telefono = w_telefono)
     
     n = Operadora.objects.count()
-    print(str(n) + " operators stored in DB.")
+    print(str(n) + " operadores almacenados en la BD.")
     
 def populateFromVodafone():
-    pass
+    print("Extrayendo datos de Vodafone...")
+    
+    extraer_tarifas_moviles_vodafone()
+    
+    extraer_adsl_fibra_vodafone()
+    
+    extraer_paquetes_vodafone()
 
+    print("Datos de Vodafone extraidos...")
 
 def populateFromYoigo():
     print("Extrayendo datos de Yoigo...")
@@ -58,25 +65,27 @@ def populateFromYoigo():
     print("Datos de Yoigo extraidos...")
     
 def populateFromOrange():
-    print("")
+    print("Extrayendo datos de Orange...")
     
-    #extraer_tarifas_moviles_orange()
-    #extraer_adsl_fibra_orange()
+    extraer_tarifas_moviles_orange()
+    extraer_adsl_fibra_orange()
     extraer_paquetes_orange()
     
-    print("")
+    print("Datos de Orange extraidos")
 
 
 def populateDatabase():
     deleteTables()
     
+    print("Datos insertandose en la BD")
+    
     populate_operator()
     
-    #populateFromYoigo()
+    populateFromYoigo()
     populateFromOrange()
-    #populateFromVodafone()
+    populateFromVodafone()
     
-    print("Finished database population...")
+    print("Datos insertados en la BD correctamente...")
     
 
 # Funciones y procedimientos relacionados con Beautifulsoup
@@ -85,7 +94,7 @@ def procesar_pagina(d):
     documento = BeautifulSoup(fichero, "lxml")
     return documento
 
-def seleccionar_pagina():
+def seleccionar_pagina_orange():
     url = "https://www.phonehouse.es/tarifas/orange/love.html"
     paginas = []
     
@@ -96,6 +105,16 @@ def seleccionar_pagina():
     
     return paginas
 
+def seleccionar_pagina_vodafone():
+    url = "https://www.phonehouse.es/tarifas/vodafone/one.html"
+    paginas = []
+    
+    paginas.append(url)
+    for i in range (2, 6):
+        p = url + "?convergente-pagina=" + str(i) + "#convergente"
+        paginas.append(p)
+    
+    return paginas
 
 # Beautifulsoup sobre Yoigo
 
@@ -387,7 +406,7 @@ def extraer_adsl_fibra_orange():
 
 
 def extraer_paquetes_orange():
-    paginas = seleccionar_pagina()
+    paginas = seleccionar_pagina_orange()
     print("Paginas de paquetes Orange", len(paginas))
     for pagina in paginas:
         print(pagina)
@@ -400,7 +419,7 @@ def extraer_paquetes_orange():
             tag_div_fijo = e.find("div", class_ = ["col_3"])
             tag_ul_fijo = tag_div_fijo.find("ul")
             tag_fijo = tag_ul_fijo.find("li")
-            fijo_tarifa = tag_fijo.string
+            fijo_tarifa = tag_fijo.string.strip()
             tag_li_min_fijo = tag_ul_fijo.find_all("li")
             for i in tag_li_min_fijo:
                 tag_min_fijo = i.string.strip()
@@ -418,7 +437,7 @@ def extraer_paquetes_orange():
             if(tag_p_tv == None):
                 tv_tarifa = "Sin TV"
             else:
-                tv_tarifa = tag_p_tv.string
+                tv_tarifa = tag_p_tv.string.strip()
             
             
             tag_ul_promo = e.find("ul", class_ = ["promo"])
@@ -426,7 +445,7 @@ def extraer_paquetes_orange():
             if(tag_promo == None):
                 promo = "Sin promoción"
             else:
-                promo = tag_promo.string
+                promo = tag_promo.string.strip()
             
             tag_div_precio = e.find("strong")
             
@@ -437,16 +456,7 @@ def extraer_paquetes_orange():
             precio = tag_div_precio.string.strip()
             precio = precio.replace(",", ".")
             orange = getOperadora('Orange')
-            """
-            print(nombre_tarifa + " - " + str(type(nombre_tarifa)) + " - " + str(len(nombre_tarifa)))
-            print(velocidad_tarifa + " - " + str(type(velocidad_tarifa)))
-            print(fijo_tarifa + " - " + str(type(fijo_tarifa)))
-            print(movil_tarifa + " - " + str(type(movil_tarifa)))
-            print(tv_tarifa + " - " + str(type(tv_tarifa)))
-            print(precio + " - " + str(type(precio)))
-            print("---")
             
-            """
             Paquete.objects.create(nombre = nombre_tarifa,
                                    velocidad = velocidad_tarifa,
                                    fijo = fijo_tarifa,
@@ -458,7 +468,169 @@ def extraer_paquetes_orange():
     
     n = Paquete.objects.count()
     print(str(n) + " paquetes almacenados.")
+    
+
+def extraer_tarifas_moviles_vodafone():
+    pagina = "https://www.phonehouse.es/tarifas/vodafone/movil-contrato.html"
+    documento = procesar_pagina(pagina)
+    
+    l = documento.find_all("li", class_=["linea"])
+    
+    for e in l:
+        tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+            
+        tag_div_minutos_tarifa = e.find("div", class_ = ["col_2"])
+        tag_minutos_tarifa = tag_div_minutos_tarifa.find("ul")
+                         
+        tag_div_internet_tarifa = e.find("div", class_ = ["col_3"])
+        tag_internet_tarifa = tag_div_internet_tarifa.find("li")
+         
+        tag_ul_promocion_tarifa = e.find("ul", class_= ["promo"])
+        promocion_tarifa = tag_ul_promocion_tarifa.find("li")
         
+             
+        tag_div_precio_tarifa = e.find("div", class_ = ["precio"])
+        tag_precio_tarifa = tag_div_precio_tarifa.find("strong")
+        precio_tarifa = tag_precio_tarifa.string.strip()
+             
+        nombre_tarifa = tag_nombre_tarifa.string.strip()
+        minutos_tarifa = tag_minutos_tarifa.string
+        internet_tarifa = tag_internet_tarifa.string.strip()
+        precio_tarifa = tag_precio_tarifa.string.strip()
+        tipo_tarifa = "Contrato"
+        vodafone = getOperadora('Vodafone')
+         
+    
+        if (minutos_tarifa == None):
+            minutos_tarifa = tag_minutos_tarifa.find(string = re.compile(""))
+        elif (promocion_tarifa == None):
+            promocion_tarifa = "Sin promoción"
+        elif(promocion_tarifa != None):
+            promocion_tarifa = promocion_tarifa.find(string = re.compile("li")) 
+            
+        Tarifa_movil.objects.create(nombre = nombre_tarifa,
+                                    minutos = minutos_tarifa,
+                                    internet_movil = internet_tarifa,
+                                    promociones = promocion_tarifa,
+                                    coste_mensual = float(precio_tarifa),
+                                    tipo = tipo_tarifa,
+                                    operadora = vodafone)
+    
+    n = Tarifa_movil.objects.count()
+    print(str(n) + " tarifas moviles almacenadas.")
+    
+
+def extraer_adsl_fibra_vodafone():
+    pagina = "https://www.phonehouse.es/tarifas/vodafone/adsl-fibra.html"
+    documento = procesar_pagina(pagina)
+    
+    l = documento.find_all("li", class_=["linea"])
+    
+    for e in l:
+        tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+        tag_velocidad_adsl = e.find("h4")
+        
+        tag_div_fijo = e.find("div", class_ = ["col_3"])
+        tag_ul_fijo = tag_div_fijo.find("ul")
+        tag_fijo = tag_ul_fijo.find("li")
+        fijo_tarifa = tag_fijo.string.strip()
+        tag_nacionales = tag_ul_fijo.find_all("li")
+        for i in tag_nacionales:
+            tag_nacionales = i.string.strip()
+        
+        #for i in tag_fijo:
+            #fijo = i.string.strip()
+        
+        tag_ul_promo = e.find("ul", class_ = ["promo"])
+        promo = tag_ul_promo.find("li")
+        tag_div_precio = e.find("strong")
+        
+        nombre_tarifa = tag_nombre_tarifa.string.strip()
+        velocidad_adsl = tag_velocidad_adsl.string.strip()
+        fijo_tarifa =  fijo_tarifa + " " + tag_nacionales
+        precio = tag_div_precio.string.strip()
+        precio = precio.replace(",",".")
+        tipo_tarifa = "Fibra"
+        vodafone = getOperadora('Vodafone')
+        
+        if (promo == None):
+            promo = "Sin promoción"
+        
+        ADSL_FIBRA.objects.create(nombre = nombre_tarifa,
+                                  velocidad = velocidad_adsl,
+                                  fijo = fijo_tarifa,
+                                  promociones = promo,
+                                  coste_mensual = float(precio),
+                                  tipo = tipo_tarifa,
+                                  operadora = vodafone)
+    
+    n = ADSL_FIBRA.objects.count()
+    print(str(n) + " tarifas de fibra (o ADSL) almacenadas")        
+        
+
+def extraer_paquetes_vodafone():
+    paginas = seleccionar_pagina_vodafone()
+    print("Paginas de paquetes", len(paginas))
+    for pagina in paginas:
+        print(pagina)
+        documento = procesar_pagina(pagina)
+        l = documento.find_all("li", class_=["linea"])
+        for e in l:
+            tag_nombre_tarifa = e.find("div", class_ = ["nombre-tarifa"])
+            tag_velocidad = e.find("h4")
+            
+            tag_div_fijo = e.find("div", class_ = ["col_3"])
+            tag_ul_fijo = tag_div_fijo.find("ul")
+            tag_fijo = tag_ul_fijo.find("li")
+            fijo_tarifa = tag_fijo.string.strip()
+            tag_li_min_fijo = tag_ul_fijo.find_all("li")
+            for i in tag_li_min_fijo:
+                tag_min_fijo = i.string.strip()
+            
+            tag_div_movil = e.find("div", class_ = ["col_4"])
+            tag_ul_movil = tag_div_movil.find("ul")
+            tag_movil = tag_ul_movil.find("li")
+            movil = tag_movil.string.strip()
+            tag_li_gb_movil = tag_ul_movil.find_all("li")
+            for i in tag_li_gb_movil:
+                tag_gb_movil = i.string.strip()
+                
+            tag_div_tv = e.find("div", class_ = ["col_5"])
+            tag_p_tv = tag_div_tv.find("p")
+            if(tag_p_tv == None):
+                tv_tarifa = "Sin TV"
+            else:
+                tv_tarifa = tag_p_tv.string.strip()
+            
+            tag_ul_promo = e.find("ul", class_ = ["promo"])
+            tag_promo = tag_ul_promo.find("li")
+            if(tag_promo == None):
+                promo = "Sin promoción"
+            else:
+                promo = tag_promo.string.strip()
+            
+            tag_div_precio = e.find("strong")
+            
+            nombre_tarifa = tag_nombre_tarifa.string.strip()
+            velocidad_tarifa = tag_velocidad.string.strip()
+            movil_tarifa = movil + ". " + tag_gb_movil   
+            fijo_tarifa = fijo_tarifa + " " + tag_min_fijo
+            precio = tag_div_precio.string.strip()
+            precio = precio.replace(",", ".")
+            vodafone = getOperadora('Vodafone')
+            
+            Paquete.objects.create(nombre = nombre_tarifa,
+                                   velocidad = velocidad_tarifa,
+                                   fijo = fijo_tarifa,
+                                   movil = movil_tarifa,
+                                   tv = tv_tarifa,
+                                   promociones = promo,
+                                   coste_mensual = float(precio),
+                                   operadora = vodafone)
+    
+    n = Paquete.objects.count()
+    print(str(n) + " paquetes almacenados.")        
+            
 if __name__ == '__main__':
     populateDatabase()
     
