@@ -9,5 +9,7 @@ urlpatterns = [
     path('paquetes',views.paquetes,name='paquetes'),
     path('tarifaMovil',views.tarifaMovil,name='tarifaMovil'),
     path('internet',views.internet,name='internet'),
-    path('info',views.info,name='info')
+    path('info',views.info,name='info'),
+    path('indexar',views.indexar,name='indexar')
+    
 ]
