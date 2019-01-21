@@ -37,17 +37,15 @@ def definir_esquema_tarifasMovil():
                     internet_movil = TEXT(stored=True),
                     promociones = TEXT(stored=True),
                     coste_mensual = TEXT(stored=True),
-                    tipo = TEXT(stored=True),
-                    operadora = TEXT(stored=True))
+                    tipo = TEXT(stored=True))
     
 def add_doc_tarifaMovil(writer, tarifaMovil):
     writer.add_document(nombre = tarifaMovil[0],
                         minutos = tarifaMovil[1],
                         internet_movil = tarifaMovil[2],
                         promociones = tarifaMovil[3],
-                        coste_mensual= tarifaMovil[4],
-                        tipo=tarifaMovil[5],
-                        operadora=tarifaMovil[6])
+                        coste_mensual= str(tarifaMovil[4]),
+                        tipo=tarifaMovil[5])
                     
 def definir_esquema_adslFibra():
     return Schema(nombre=TEXT(stored=True),
@@ -55,17 +53,15 @@ def definir_esquema_adslFibra():
                     fijo = TEXT(stored=True),
                     promociones = TEXT(stored=True),
                     coste_mensual = TEXT(stored=True),
-                    tipo = TEXT(stored=True),
-                    operadora = TEXT(stored=True))
+                    tipo = TEXT(stored=True))
     
 def add_doc_adslFibra(writer, adslFibra):
     writer.add_document(nombre = adslFibra[0],
                         velocidad = adslFibra[1],
                         fijo = adslFibra[2],
                         promociones = adslFibra[3],
-                        coste_mensual= adslFibra[4],
-                        tipo=adslFibra[5],
-                        operadora=adslFibra[6])
+                        coste_mensual= str(adslFibra[4]),
+                        tipo=adslFibra[5])
     
 def definir_esquema_paquetes():
     return Schema(nombre=TEXT(stored=True),
@@ -74,8 +70,7 @@ def definir_esquema_paquetes():
                     movil = TEXT(stored=True),
                     tv = TEXT(stored=True),
                     promociones = TEXT(stored=True),
-                    coste_mensual = TEXT(stored=True),
-                    operadora = TEXT(stored=True))
+                    coste_mensual = TEXT(stored=True))
     
 def add_doc_paquete(writer, paquete):
     writer.add_document(nombre = paquete[0],
@@ -84,15 +79,14 @@ def add_doc_paquete(writer, paquete):
                         movil = paquete[3],
                         tv = paquete[4],
                         promociones = paquete[5],
-                        coste_mensual= paquete[6],
-                        operadora=paquete[7])
+                        coste_mensual= str(paquete[6]))
     
     
 def obtener_operadoras():
     conn = crear_conexion()
     
-    #cursor = conn.execute("SELECT NOMBRE,ENLACE_WEB,TELEFONO FROM PRINCIPAL_OPERADORA")
-    cursor = models.Operadora.objects.all()
+    cursor = conn.execute("SELECT NOMBRE,ENLACE_WEB,TELEFONO FROM PRINCIPAL_OPERADORA")
+    #cursor = models.Operadora.objects.all()
     operadoras = [row for row in cursor]
     
     cerrar_conexion(conn)
@@ -102,8 +96,8 @@ def obtener_operadoras():
 def obtener_tarifasMovil():
     conn = crear_conexion()
     
-    #cursor = conn.execute("SELECT NOMBRE,MINUTOS,INTERNET_MOVIL,PROMOCIONES,COSTE_MENSUAL,TIPO,OPERADORA FROM PRINCIPAL_TARIFA_MOVIL")
-    cursor = models.Tarifa_movil.objects.all()
+    cursor = conn.execute("SELECT NOMBRE,MINUTOS,INTERNET_MOVIL,PROMOCIONES,COSTE_MENSUAL,TIPO FROM PRINCIPAL_TARIFA_MOVIL")
+    #cursor = models.Tarifa_movil.objects.all()
     tarifaMovil = [row for row in cursor]
     
     cerrar_conexion(conn)
@@ -113,8 +107,8 @@ def obtener_tarifasMovil():
 def obtener_adslFibra():
     conn = crear_conexion()
     
-    #cursor = conn.execute("SELECT NOMBRE,VELOCIDAD,FIJO,PROMOCIONES,COSTE_MENSUAL,TIPO,OPERADORA FROM PRINCIPAL_ADSL_FIBRA")
-    cursor = models.ADSL_FIBRA.objects.all()
+    cursor = conn.execute("SELECT NOMBRE,VELOCIDAD,FIJO,PROMOCIONES,COSTE_MENSUAL,TIPO FROM PRINCIPAL_ADSL_FIBRA")
+    #cursor = models.ADSL_FIBRA.objects.all()
     adslFibra = [row for row in cursor]
     
     cerrar_conexion(conn)
@@ -124,8 +118,8 @@ def obtener_adslFibra():
 def obtener_paquetes():
     conn = crear_conexion()
     
-    #cursor = conn.execute("SELECT NOMBRE,VELOCIDAD,FIJO,MOVIL,TV,PROMOCIONES,COSTE_MENSUAL,OPERADORA FROM PRINCIPAL_PAQUETE")
-    cursor = models.Paquete.objects.all()
+    cursor = conn.execute("SELECT NOMBRE,VELOCIDAD,FIJO,MOVIL,TV,PROMOCIONES,COSTE_MENSUAL FROM PRINCIPAL_PAQUETE")
+    #cursor = models.Paquete.objects.all()
     paquete = [row for row in cursor]
     
     cerrar_conexion(conn)
@@ -183,10 +177,10 @@ def indexar():
     writer_adslFibra.commit()
     writer_paquetes.commit()
     
-    messagebox.showinfo("Fin de indexado", "Se han indexado " + str(i) + " operadoras.")
-    messagebox.showinfo("Fin de indexado", "Se han indexado " + str(j) + " tarifas de movil.")
-    messagebox.showinfo("Fin de indexado", "Se han indexado " + str(k) + " adsl y fibras.")
-    messagebox.showinfo("Fin de indexado", "Se han indexado " + str(l) + " paquetes.")
+    print("Fin de indexado", "Se han indexado " + str(i) + " operadoras.")
+    print("Fin de indexado", "Se han indexado " + str(j) + " tarifas de movil.")
+    print("Fin de indexado", "Se han indexado " + str(k) + " adsl y fibras.")
+    print("Fin de indexado", "Se han indexado " + str(l) + " paquetes.")
     
     
 # Búsquedas de tarifas movil   
@@ -204,7 +198,6 @@ def buscar_tarifas_movil():
             print("Promociones: " + r['promociones'])
             print("Coste Mensual: " + r['coste_mensual'])
             print("Tipo: " + r['tipo'])
-            print("Operadora: " + r['operadora'])
             print("")
             
 # Busqueda de paquete
@@ -223,7 +216,6 @@ def buscar_paquete():
             print("TV: " + r['tv'])
             print("Promociones: " + r['promociones'])
             print("Coste Mensual: " + r['coste_mensual'])
-            print("Operadora: " + r['operadora'])
             print("")
             
 # Busqueda de adsl o fibra
@@ -241,52 +233,6 @@ def buscar_adsl_fibra():
             print("Promociones: " + r['promociones'])
             print("Coste Mensual: " + r['coste_mensual'])
             print("Tipo: " + r['tipo'])
-            print("Operadora: " + r['operadora'])
+
             print("")
 
-                
-        
-        
-        
-    
-    
-    
-
-def ventana_principal():
-    root = Tk()
-    root.geometry("200x100")
-    
-    menubar = Menu(root)
-    
-    # Opcion Inicio    
-    iniciomenu = Menu(menubar, tearoff = 0)
-    #iniciomenu.add_command(label = "Cargar", command = populateDB.populateDatabase())
-    iniciomenu.add_command(label = "Indexar", command = indexar)
-    #iniciomenu.add_command(label = "Salir", command = root.destroy())
-    menubar.add_cascade(label = "Inicio", menu = iniciomenu)
-    
-    # Opcion Buscar
-    buscarmenu = Menu(menubar, tearoff = 0)
-    
-    tarifa_movil = Menu(buscarmenu, tearoff = 0)
-    
-    tarifa_movil.add_command(label = "Texto", command = buscar_tarifas_movil)
-    buscarmenu.add_cascade(label = "Tarifas Movil", menu = tarifa_movil)
-    
-    paquete = Menu(buscarmenu, tearoff = 0)
-    paquete.add_command(label = "Texto", command = buscar_paquete)
-    buscarmenu.add_cascade(label = "Paquetes", menu = paquete)
-    
-    adsl_fibra = Menu(buscarmenu, tearoff = 0)
-    adsl_fibra.add_command(label = "Texto", command = buscar_adsl_fibra)
-    buscarmenu.add_cascade(label = "ADSL o Fibra", menu = adsl_fibra)
-    
-    menubar.add_cascade(label = "Buscar", menu = buscarmenu)
-    
-    root.config(menu = menubar)
-    root.mainloop()
-    
-
-if __name__ == '__main__':
-    ventana_principal()
-    

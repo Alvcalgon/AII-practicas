@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from principal.models import Operadora, Tarifa_movil,ADSL_FIBRA,Paquete
 from principal.populateDB import populateDatabase
+from principal import whooshGoodPack
 
 # Create your views here.
 
@@ -24,4 +25,8 @@ def internet(request):
 def info(request):
     info=Operadora.objects.all()
     return render(request,'info.html',{'info':info})
+
+def indexar(request):
+    whooshGoodPack.indexar()
+    return render(request, 'indexar.html')
 
