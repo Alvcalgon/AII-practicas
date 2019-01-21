@@ -71,6 +71,9 @@ def cargar_tarifas_hablar_navegar():
 
 def extraer_adsl_fibra():
     f = urllib.request.urlopen("https://www.phonehouse.es/tarifas/vodafone/adsl-fibra.html")
+    '''
+    Url alternativo: https://www.phonehouse.es/adsl/comparativa-tarifas-adsl-fibra.html?adslfibra-operador=Vodafone#adslfibra
+    '''
     s = BeautifulSoup(f, "lxml")
     l = s.find_all("li", class_=["linea"])
     return l
