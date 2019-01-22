@@ -189,7 +189,7 @@ def buscar_tarifas_movil():
     ix = open_dir(dir_in, indexname= "indice_tarifasMovil")
     
     with ix.searcher() as searcher:
-        myquery =  MultifieldParser(["internet_movil","coste_mensual"], ix.schema).parse(query)
+        myquery =  MultifieldParser(["internet_movil","coste_mensual","minutos","promociones","tipo"], ix.schema).parse(query)
         results = searcher.search(myquery)
         for r in results:
             print("Nombre: " + r['nombre'])
@@ -206,7 +206,7 @@ def buscar_paquete():
     ix = open_dir(dir_in, indexname= "indice_paquetes")
     
     with ix.searcher() as searcher:
-        myquery =  MultifieldParser(["velocidad","coste_mensual","nombre","tv"], ix.schema).parse(query)
+        myquery =  MultifieldParser(["velocidad","coste_mensual","nombre","tv","fijo","movil","promociones"], ix.schema).parse(query)
         results = searcher.search(myquery)
         for r in results:
             print("Nombre: " + r['nombre'])
@@ -224,7 +224,7 @@ def buscar_adsl_fibra():
     ix = open_dir(dir_in, indexname= "indice_adslFibra")
     
     with ix.searcher() as searcher:
-        myquery =  MultifieldParser(["velocidad","coste_mensual"], ix.schema).parse(query)
+        myquery =  MultifieldParser(["velocidad","coste_mensual","fijo","promociones","tipo"], ix.schema).parse(query)
         results = searcher.search(myquery)
         for r in results:
             print("Nombre: " + r['nombre'])
