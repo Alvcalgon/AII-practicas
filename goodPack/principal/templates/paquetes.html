@@ -1,0 +1,24 @@
+{% extends "master_page.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<body>
+    
+    <div style="text-align:center;">
+       <h3>
+        <strong>
+        Elige que paquete prefieres y empieza a disfrutar!
+        </strong>
+        </h3>
+        {% for paquete in paquetes %}
+	  	<li>{{paquete.nombre}}</li>
+		{% endfor %}
+    </div>
+       
+        
+    
+    
+</body>
+
+{% endblock %}  
+

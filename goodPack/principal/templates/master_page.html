@@ -1,26 +1,52 @@
-{% load static %}
+{% load i18n static %}
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>{% block title%}{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'principal/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<title>{% block title%}Comparator{% endblock %}</title>
+		<a href="https://www.informatica.us.es/"><img src="{% static 'principal/logo-etsii.png' %}" alt="LOGO ETSII" /></a>
+		<nav class="navbar navbar-inverse" id="menu" >
+  <div class="container-fluid" id="menu">
+    
+    <ul class="nav navbar-nav" id="menu">
+      <li class="active"><a href="../ ">Home</a></li>
+      <li><a href="paquetes">Paquetes</a></li>
+      <li><a href="internet">Internet</a></li>
+      <li><a href="tarifaMovil">Tarifas</a></li>
+      <li><a href="info">Info</a></li>
+     
+      
+    </ul>
+      
+      <a href="populateDB"> <button class="btn btn-danger navbar-btn">Poblar</button></a>
+      <a href="indexar"> <button class="btn btn-danger navbar-btn">Indexar</button></a>
+  </div>
+        </nav>
 	</head>
+	{% block content %}
 	<body>
-		<img src="{% static 'principal/logo-etsii.png' %}" alt="LOGO ETSII" />
-		<div class="menu_links" >
-			<header>
-				<nav>
-					<ul>
-						<li> <a href="populateDB"> Poblar Base de datos </a> </li>
-					</ul>
-				</nav>
-			</header>
-		</div>
-		
-		{% block content %}{% endblock %}
 		
 		
-		<footer>
-			<p>Copyright &copy; 2019 - GoodPack </p>
-		</footer>
+		
+  
+		
+		
+		
 	</body>
+	{% endblock %}
+	
+		<footer id ="footer">
+    <!-- Copyright -->
+    <div style="text-align:center;">© 2019
+      <a href="https://www.vodafone.es/c/particulares/es/"> Vodafone</a>
+      <a href="https://www.orange.es/"> Orange</a>
+      <a href="https://www.yoigo.com/"> Yoigo</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer> 
+  
 </html>

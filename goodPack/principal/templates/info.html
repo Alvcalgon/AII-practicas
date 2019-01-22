@@ -1,0 +1,64 @@
+{% extends "master_page.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<body>
+    
+    <div style="text-align:center;">
+       <h3>
+        <strong>
+        Aquí encontrarás toda la atención al cliente que necesitas!
+        </strong>
+        </h3>
+    </div>
+   <!-- <div>
+    <ul>
+    {% for dato in info %}
+   	 	<li>
+   	 	Operadora:{{dato.nombre}}<br>
+    	<a href="{{dato.enlace_web}}">Enlace a la web</a><br>
+    	Atención al cliente: {{dato.telefono}}<br>
+    	
+    	</li>
+    	{% endfor %}
+    </ul>
+    
+    </div>     
+    -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive" >
+        <table class="table table-bordered table-hover" >
+        
+        <thead>
+            <tr>
+              <th style="text-align:center;">Operadora</th>
+              <th style="text-align:center;">Enlace</th>
+              <th style="text-align:center;">Atención al cliente</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for dato in info %}
+            <tr>
+              <td>{{dato.nombre}}</td>
+              <td><a href="{{dato.enlace_web}}">web</a></td>
+              <td>{{dato.telefono}}</td>
+              
+            </tr>
+            {% endfor %}
+            </tbody>
+                </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div> 
+</div>
+
+
+</body>
+
+
+
+
+{% endblock %}  
