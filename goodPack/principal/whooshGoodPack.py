@@ -184,7 +184,7 @@ def indexar():
     
     
 # Búsquedas de tarifas movil   
-def buscar_tarifas_movil():
+def buscar_tarifas_movil(str):
     query = input("Introduzca una palabra de busqueda: ")
     ix = open_dir(dir_in, indexname= "indice_tarifasMovil")
     

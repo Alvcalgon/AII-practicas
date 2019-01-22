@@ -5,7 +5,7 @@ from principal import whooshGoodPack
 
 # Create your views here.
 
-def index(request):
+def index(request): 
     return render(request, 'principal/index.html')
 
 def populateDB(request):
@@ -30,3 +30,16 @@ def indexar(request):
     whooshGoodPack.indexar()
     return render(request, 'indexar.html')
 
+def buscar_tarifa(request):
+    if request.method=='GET':
+        form = tarifaForm(request.GET, request.FILES)
+        if form.is_valid():
+            tarifaId = form.cleaned_data['search']
+            
+            return render(request,'tarifaMovil.html', {'tarifaId':tarifaId})
+    form=tarifaForm()
+    return render(request,'search_user.html', {'form':form })   
+    
+    
+    
+    
