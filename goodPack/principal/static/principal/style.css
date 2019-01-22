@@ -39,14 +39,4 @@ tr{
 #menu{
     text-align: center;
 }
-ul {
-  list-style: none;
-  display: inline-block;
-}
-ul li {
-  float: left;
-  margin: 0 20px;
-}
-ul li a {
-  color: white;
-}
+

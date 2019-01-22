@@ -5,7 +5,7 @@ from principal import whooshGoodPack
 
 # Create your views here.
 
-def index(request):
+def index(request): 
     return render(request, 'principal/index.html')
 
 def populateDB(request):
@@ -17,10 +17,12 @@ def paquetes(request):
     return render(request,'paquetes.html', {'paquetes':paquetes})
 
 def tarifaMovil(request):
-    return render(request,'tarifaMovil.html')
+    tarifas=Tarifa_movil.objects.all()
+    return render(request,'tarifaMovil.html',{'tarifas':tarifas})
 
 def internet(request):
-    return render(request,'internet.html')
+    internets=ADSL_FIBRA.objects.all()
+    return render(request,'internet.html',{'internets':internets})
 
 def info(request):
     info=Operadora.objects.all()
@@ -30,3 +32,5 @@ def indexar(request):
     whooshGoodPack.indexar()
     return render(request, 'indexar.html')
 
+
+    

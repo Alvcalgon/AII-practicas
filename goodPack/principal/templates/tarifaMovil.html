@@ -13,9 +13,45 @@
         </h3>
     </div>
        
+          <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive" >
+        <table class="table table-bordered table-hover" id="bottom" >
         
-    
-    
+        <thead>
+            <tr>
+              <th style="text-align:center;">Nombre</th>
+              <th style="text-align:center;">Minutos</th>
+              <th style="text-align:center;">Internet movil</th>
+              <th style="text-align:center;">Promociones</th>
+              <th style="text-align:center;">Coste mensual</th>
+              <th style="text-align:center;">Tipo</th>
+              <th style="text-align:center;">Operadora</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for tarifa in tarifas %}
+            <tr>
+              <td>{{tarifa.nombre}}</td>
+              <td>{{tarifa.minutos}}</td>
+              <td>{{tarifa.internet_movil}}</td>
+              <td>{{tarifa.promociones}}</td>
+              <td>{{tarifa.coste_mensual}} €</td>
+              <td>{{tarifa.tipo}}</td>
+              <td>{{tarifa.operadora}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+                </table>
+      </div><!--end of .table-responsive-->
+       <h3 style="text-align:center;">Debes poblar antes!</h3>
+    </div>
+  </div> 
+</div>
+        
+ 
 </body>
+
 
 {% endblock %}  
