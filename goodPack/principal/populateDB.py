@@ -521,7 +521,7 @@ def extraer_tarifas_moviles_vodafone():
     
 
 def extraer_adsl_fibra_vodafone():
-    pagina = "https://www.phonehouse.es/tarifas/vodafone/adsl-fibra.html"
+    pagina = "https://www.phonehouse.es/adsl/comparativa-tarifas-adsl-fibra.html?adslfibra-operador=Vodafone#adslfibra"
     documento = procesar_pagina(pagina)
     
     l = documento.find_all("li", class_=["linea"])
@@ -547,7 +547,6 @@ def extraer_adsl_fibra_vodafone():
         
         nombre_tarifa = tag_nombre_tarifa.string.strip()
         velocidad_adsl = tag_velocidad_adsl.string.strip()
-        fijo_tarifa =  fijo_tarifa + " " + tag_nacionales
         precio = tag_div_precio.string.strip()
         precio = precio.replace(",",".")
         tipo_tarifa = "Fibra"
@@ -614,7 +613,7 @@ def extraer_paquetes_vodafone():
             nombre_tarifa = tag_nombre_tarifa.string.strip()
             velocidad_tarifa = tag_velocidad.string.strip()
             movil_tarifa = movil + ". " + tag_gb_movil   
-            fijo_tarifa = fijo_tarifa + " " + tag_min_fijo
+            fijo_tarifa = fijo_tarifa
             precio = tag_div_precio.string.strip()
             precio = precio.replace(",", ".")
             vodafone = getOperadora('Vodafone')

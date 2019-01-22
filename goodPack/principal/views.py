@@ -17,10 +17,12 @@ def paquetes(request):
     return render(request,'paquetes.html', {'paquetes':paquetes})
 
 def tarifaMovil(request):
-    return render(request,'tarifaMovil.html')
+    tarifas=Tarifa_movil.objects.all()
+    return render(request,'tarifaMovil.html',{'tarifas':tarifas})
 
 def internet(request):
-    return render(request,'internet.html')
+    internets=ADSL_FIBRA.objects.all()
+    return render(request,'internet.html',{'internets':internets})
 
 def info(request):
     info=Operadora.objects.all()
@@ -30,16 +32,5 @@ def indexar(request):
     whooshGoodPack.indexar()
     return render(request, 'indexar.html')
 
-def buscar_tarifa(request):
-    if request.method=='GET':
-        form = tarifaForm(request.GET, request.FILES)
-        if form.is_valid():
-            tarifaId = form.cleaned_data['search']
-            
-            return render(request,'tarifaMovil.html', {'tarifaId':tarifaId})
-    form=tarifaForm()
-    return render(request,'search_user.html', {'form':form })   
-    
-    
-    
+
     
