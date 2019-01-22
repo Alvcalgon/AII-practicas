@@ -41,7 +41,7 @@ def populateFromVodafone():
     
     extraer_tarifas_moviles_vodafone()
     
-    extraer_adsl_fibra_vodafone()
+    #extraer_adsl_fibra_vodafone()
     
     extraer_paquetes_vodafone()
 
