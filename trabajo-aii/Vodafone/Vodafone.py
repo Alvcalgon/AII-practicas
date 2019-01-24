@@ -70,7 +70,7 @@ def cargar_tarifas_hablar_navegar():
 # Tarifas ADSL o Fibra
 
 def extraer_adsl_fibra():
-    f = urllib.request.urlopen("https://www.phonehouse.es/tarifas/vodafone/adsl-fibra.html")
+    f = urllib.request.urlopen("https://www.phonehouse.es/adsl/comparativa-tarifas-adsl-fibra.html?adslfibra-operador=Vodafone#adslfibra")
     '''
     Url alternativo: https://www.phonehouse.es/adsl/comparativa-tarifas-adsl-fibra.html?adslfibra-operador=Vodafone#adslfibra
     '''

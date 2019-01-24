@@ -11,6 +11,43 @@
         </strong>
         </h3>
     </div>
+             <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive" >
+        <table class="table table-bordered table-hover" >
+        
+        <thead>
+            <tr>
+              <th style="text-align:center;">Nombre</th>
+              <th style="text-align:center;">Velocidad</th>
+              <th style="text-align:center;">Fijo</th>
+              <th style="text-align:center;">Promociones</th>
+              <th style="text-align:center;">Coste mensual</th>
+              <th style="text-align:center;">Tipo</th>
+              <th style="text-align:center;">Operadora</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for internet in internets %}
+            <tr>
+              <td>{{internet.nombre}}</td>
+              <td>{{internet.velocidad}}</td>
+              <td>{{internet.fijo}}</td>
+              <td>{{internet.promociones}}</td>
+              <td>{{internet.coste_mensual}} €</td>
+              <td>{{internet.tipo}}</td>
+              <td>{{internet.operadora}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+                </table>
+      </div><!--end of .table-responsive-->
+       <h3 hidden>internet</h3>
+    </div>
+  </div> 
+</div>
+       
         
         
     

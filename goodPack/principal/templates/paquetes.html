@@ -10,10 +10,47 @@
         Elige que paquete prefieres y empieza a disfrutar!
         </strong>
         </h3>
-        {% for paquete in paquetes %}
-	  	<li>{{paquete.nombre}}</li>
-		{% endfor %}
+ 
     </div>
+      
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive" >
+        <table class="table table-bordered table-hover" >
+        
+        <thead>
+            <tr>
+              <th style="text-align:center;">Nombre</th>
+              <th style="text-align:center;">Velocidad</th>
+              <th style="text-align:center;">Fijo</th>
+              <th style="text-align:center;">Movil</th>
+              <th style="text-align:center;">TV</th>
+              <th style="text-align:center;">Promociones</th>
+              <th style="text-align:center;">Coste mensual</th>
+              <th style="text-align:center;">Operadora</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for paquete in paquetes %}
+            <tr>
+              <td>{{paquete.nombre}}</td>
+              <td>{{paquete.velocidad}}</td>
+              <td>{{paquete.fijo}}</td>
+              <td>{{paquete.movil}}</td>
+              <td>{{paquete.tv}}</td>
+              <td>{{paquete.promociones}}</td>
+              <td>{{paquete.coste_mensual}} €</td>
+              <td>{{paquete.operadora}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+                </table>
+      </div><!--end of .table-responsive-->
+       <h3 style="text-align:center;">Debes poblar antes!</h3>
+    </div>
+  </div> 
+</div>
        
         
     

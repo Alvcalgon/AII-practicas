@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//goodPack/principal/forms.py=utf-8
 encoding//goodPack/principal/populateDB.py=utf-8
+encoding//goodPack/principal/whooshGoodPack.py=utf-8
 encoding//trabajo-aii/Vodafone/Vodafone.py=utf-8
 encoding//trabajo-aii/orange/__init__.py=utf-8

@@ -1,11 +1,16 @@
 
 {% extends "master_page.html" %}
 {% block content %}
+<meta charset="UTF-8">
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
   <h2>
-  Indexado realizado correctamente
+  Indexado realizado correctamente!
   </h2>
 </div>
-
 <script>
 var myVar;
 
@@ -30,7 +35,7 @@ function showPage() {
   margin: -75px 0 0 -75px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #DB2A2A;
+  border-top: 16px solid #005494;
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
